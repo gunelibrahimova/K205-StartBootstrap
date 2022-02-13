@@ -1,0 +1,21 @@
+﻿@model Portfolio
+
+<style>
+    h1{
+        text-align:center;
+    }
+</style>
+
+<h1 >@Model.Title</h1> 
+
+<div class="row">
+    <div class="col-lg-6">
+    <img width="600" src="@Model.PhotoURL"/>
+    </div>
+    <div class="col-lg-6">
+        @Model.Description
+    </div>
+
+</div>
+
+
