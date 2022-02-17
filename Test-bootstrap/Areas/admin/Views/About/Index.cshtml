@@ -1,0 +1,37 @@
+﻿@model IEnumerable<About>
+
+     <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"><a href="/admin/about/create">Create</a></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                            @foreach (var item in Model)
+                                             {
+                                                <tr>
+                                            <td>@item.Description</td>
+                                            <td>
+                                                <a href="/admin/about/detail/@item.Id" class="btn btn-warning">Detail</a>
+                                                <a href="/admin/about/edit/@item.Id" class="btn btn-warning">Edit</a>
+                                            </td>
+                                               </tr>
+                                            }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>

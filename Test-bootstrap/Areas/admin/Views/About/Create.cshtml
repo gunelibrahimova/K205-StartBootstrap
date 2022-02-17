@@ -1,0 +1,10 @@
+﻿@model About
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="col-5">
+        <input class="form-control mb-3" asp-for="Description" />
+        <input class="form-control mb-3" type="hidden" asp-for="Id" />   
+        <input class="form-control mb-3" type="submit" value="Post" />
+    </div>
+</form>

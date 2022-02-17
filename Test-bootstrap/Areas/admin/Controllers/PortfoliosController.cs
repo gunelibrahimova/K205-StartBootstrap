@@ -57,12 +57,20 @@ namespace Testbootstrap.Areas.admin.Controllers
             if(portfolio == null) return NotFound();
             return View(portfolio);
         }
-
         [HttpPost]
         public async Task<IActionResult> Edit(Portfolio portfolio)
         {
-            _context.Entry(portfolio);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var updatedEntity = _context.Entry(portfolio);
+                updatedEntity.State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
             return View();
         }
     }
